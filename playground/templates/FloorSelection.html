@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+
+<head>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+</head>
+<body>
+
+  <h1 style="text-align:center; color:red">SAAM Smart Tour</h1>
+
+  <form style="text-align: center;" action="SAAMTourbyFloor/" method="POST">
+    <label style="font-weight: bolder;" for="floor">Choose a Floor for Smart Tour:</label>
+    <br>
+    <br>
+    <select id="floor" name="floor" required>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+      <option value="10">10</option>
+      <option value="11">11</option>
+      <option value="12">12</option>
+      <option value="13">13</option>
+      <option value="14">14</option>
+      <option value="15">15</option>
+    </select>
+    <br>
+    <br>
+    <input type="submit">
+  </form>
+
+
+
+  <form style="text-align: center;" action="SAAMTourbyNameSearch/" method="POST">
+    <br>
+    <p style="text-align: center;font-weight: bolder;">OR</p>
+    <br>
+    <label style="font-weight: bolder;" for="floor">Choose anything from title of Artwork </label>
+    <br>
+    <br>
+    <input type="text" id="fname" name="fname" required>
+    <br>
+    <br>
+    <input type="submit">
+  </form>
+    
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+
+<head>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+</head>
+<body onload="javascript:AddData()">
+
+<a href="../"><h1 style="text-align:center; color:red">SAAM Smart Tour</h1></a>
+<h2 style="text-align:center; color:red">You are searching for {{keystring}}</h1>
+  <div id = "tab">
+    <table id = "list" cellspacing = "0px" cellpadding = "20px" text-align = "center">
+        <thead>
+            <tr>
+                <td>ArtWork Images</td>
+                <td>ArtWork Width</td>
+                <td>ArtWork Title</td>
+            </tr>
+        </thead>
+
+        <tbody id = "list">
+
+        </tbody>
+    </table>
+</div>
+    
+   
+ <script>
+
+function AddData(){
+    var artI={{artworkImages|safe}}
+    var artW={{artworkWidth|safe}}
+    var artT={{artworkTitle|safe}}
+    var artiF={{artistFirstName|safe}}
+    var artiL={{artistLastName|safe}}
+    var artiP={{artistPublicCaption|safe}}
+    var artiI={{artistImage|safe}}
+
+    for(let i=0; artI.length>i;i++)
+    {
+        var rows = "";
+        var img = new Image(50, 50);
+        img.src = artI[i];
+
+        var img1 = new Image(50, 50);
+        img1.src = artiI[i];
+    
+
+        var width = artW[i];
+        var title = artT[i];
+        var firstname =artiF[i];
+        var lastname =artiL[i];
+        var publicCaption =artiP[i];
+        rows += "<tr><td><a href='"+img.src+"' target='_blank'> <img src='" +img.src+ "' width='200' height='200'></a></td><td>" + width + "</td><td>" + title + "</td><td>" + firstname + "</td><td>" + lastname + "</td><td>" + publicCaption + "</td><td><a href='"+img1.src+"' target='_blank'> <img src='" +img1.src+ "' width='200' height='200'></a></td></tr>";
+        $(rows).appendTo("#list tbody");
+    }
+} 
+  </script>
+
+</body>
+
+</html>
